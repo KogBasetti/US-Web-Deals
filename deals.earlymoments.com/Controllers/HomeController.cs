@@ -79,10 +79,12 @@ namespace deals.earlymoments.com.Controllers
                         if (!string.IsNullOrEmpty(email))
                         {
                             ProcessConfirmationEmail(oVariables, shipping_address, billing_address, shipall);
-                            BuildDynamicPixel(oVariables);
+                            string pixelString = BuildDynamicPixel(oVariables);
                             //internalPixel = "<img src='https://ping.earlymoments.com/conversion.ashx?o=" + oVariables.order_id + "&e=" + oVariables.email + "' width='1' height='1' border='0' /><iframe src='https://services.earlymoments.com/ping/p.ashx?source=7630&brand=e&data=" + oVariables.order_id.ToString() + "&type=ifr' height='1' width='1' frameborder='0'></iframe><br /><img src='https://services.earlymoments.com/ping/p.ashx?source=7630&brand=e&data=" + oVariables.order_id.ToString() + "&type=img' width='1' height='1' border='0' />";
-                            //internalPixel = "<iframe src='https://services.earlymoments.com/ping/p.ashx?source=7630&brand=e&data=" + oVariables.order_id.ToString() + "&type=ifr' height='1' width='1' frameborder='0'></iframe><br /><img src='https://services.earlymoments.com/ping/p.ashx?source=7630&brand=e&data=" + oVariables.order_id.ToString() + "&type=img' width='1' height='1' border='0' />";
-                            //Session["IsPostBack"] = true;
+                            string internalPixel = "<iframe src='https://services.earlymoments.com/ping/p.ashx?source=7630&brand=e&data=" + oVariables.order_id.ToString() + "&type=ifr' height='1' width='1' frameborder='0'></iframe><br /><img src='https://services.earlymoments.com/ping/p.ashx?source=7630&brand=e&data=" + oVariables.order_id.ToString() + "&type=img' width='1' height='1' border='0' />";
+
+                            ViewBag.pixelString = pixelString;
+                            ViewBag.internalPixel = internalPixel;
 
                             FirePostBackPixel(oVariables);
                         }
@@ -249,7 +251,7 @@ namespace deals.earlymoments.com.Controllers
             return formatedDate;
         }
 
-        private void BuildDynamicPixel(OrderVariables oVariables)
+        private string BuildDynamicPixel(OrderVariables oVariables)
         {
             CommonModels oComm = new CommonModels();
             string vendor_tracking = "";
@@ -369,12 +371,14 @@ namespace deals.earlymoments.com.Controllers
                 {
                     oComm.SendEmail("BuildDynamicPixel() <br />Exception Raised from Confirmaiton Page in EM Landers. Exception: " + ex.Message.ToString() + ".<br />More Data (Offer URL): "
                         + oVariables.referring_url + ". <br />More Data (Order Id):" + oVariables.order_id);
+                    return "";
                 }
             }
             else
             {
                 pixelstring = "";
             }
+            return pixelstring;
         }
 
         public DataTable Dynamic_Pixel(OrderVariables oVariables, string SPname, string pixcd)

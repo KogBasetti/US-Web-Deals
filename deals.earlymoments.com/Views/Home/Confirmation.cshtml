@@ -33,7 +33,14 @@
 </div>
 <div class="clearfix"></div>
 <p>*Plus sales tax where applicable.</p>
-
+<div class="clearfix">
+</div>
+<p>
+    @Html.Raw(ViewBag.pixelString)
+</p>
+<p>
+    @Html.Raw(ViewBag.internalPixel)
+</p>
 <script>
     $(document).ready(function () {
         var proj = '@ViewBag.Project';
@@ -57,7 +64,6 @@
     });
 
 </script>
-
 
 @section headerStrip {
     <img src="" alt="header" class="responsiveImg" id="headerImage">

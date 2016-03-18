@@ -51,7 +51,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="OrderEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Sandviks Dll Library\OrderEngine\03-18-2016\OrderEngine.dll</HintPath>
+      <HintPath>..\..\..\..\Sandviks Dll Library\OrderEngine\03-18-2016 updated\OrderEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -110,8 +110,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="webConn">
-      <HintPath>..\..\..\..\Sandviks Dll Library\webConn.dll</HintPath>
+    <Reference Include="webConn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Sandviks Dll Library\OrderEngine\03-18-2016 updated\webConn.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>

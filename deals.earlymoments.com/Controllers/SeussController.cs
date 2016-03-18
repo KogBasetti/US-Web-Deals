@@ -2012,23 +2012,10 @@ namespace deals.earlymoments.com.Controllers
                     if (trackingcodes.ContainsKey("tracking_id") && trackingcodes["tracking_id"] != null) { oVariables.transaction_id = trackingcodes["tracking_id"]; }
                 }
 
-
-                //if ((string)Request.QueryString["vendorcode"] != null) { oVariables.vendor_id = (string)Request.QueryString["vendorcode"]; }
-                //if ((string)Request.QueryString["key"] != null) { oVariables.vendor_data2 = (string)Request.QueryString["key"]; }
-                //if ((string)Request.QueryString["vc"] != null) { oVariables.vendor_id = (string)Request.QueryString["vc"]; }
-                //if ((string)Request.QueryString["pc"] != null) { oVariables.promotion_code = (string)Request.QueryString["pc"]; }
-                //if ((string)Request.QueryString["aff_id"] != null) { oVariables.vendor_data1 = (string)Request.QueryString["aff_id"]; } 
-                //if ((string)Request.QueryString["tracking"] != null) { oVariables.vendor_cust_ref_id = (string)Request.QueryString["tracking"]; }
-                //if ((string)Request.QueryString["src"] != null) { oVariables.pcode_pos_8 = (string)Request.QueryString["src"]; }
-                //if ((string)Request.QueryString["seg"] != null) { oVariables.pcode_segment = (string)Request.QueryString["seg"]; } 
-                //if ((string)Request.QueryString["aff_id2"] != null) { oVariables.vendor_data2 = (string)Request.QueryString["aff_id2"]; }
-                //if ((string)Request.QueryString["tracking_id"] != null) { oVariables.transaction_id = (string)Request.QueryString["tracking_id"]; }
-
                 string queryStr = System.Web.HttpContext.Current.Request.UrlReferrer.Query;
                 string ref_url = System.Web.HttpContext.Current.Request.Url.ToString();
                 // oVariables.referring_url = System.Web.HttpContext.Current.Request.Url.ToString();
                 oVariables.referring_url = ref_url + queryStr;
-
 
                 oVariables = ShippingModels.AssignShippingToOrderVariable(oVariables, shipping);
 
