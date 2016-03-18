@@ -735,6 +735,7 @@ namespace deals.earlymoments.com.Controllers
         }
 
         [HttpPost]
+        [PreserveQueryString]
         public ActionResult four_for_99_bonus(FormCollection form, ShippingModels.ShippingAddress shipping, string[] SelectedBooks)
         {
             ViewData["StatesList"] = UtilitiesModels.GetStateNameList();
@@ -920,6 +921,7 @@ namespace deals.earlymoments.com.Controllers
         }
 
         [HttpPost]
+        [PreserveQueryString]
         public ActionResult payment4_for_99_bonus(ShippingModels.BillingDetails billing)
         {
             ViewData["StatesList"] = UtilitiesModels.GetStateNameList();
