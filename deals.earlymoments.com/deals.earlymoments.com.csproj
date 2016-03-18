@@ -49,8 +49,9 @@
       <HintPath>..\..\..\..\Sandviks Dll Library\dbConn.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="OrderEngine">
-      <HintPath>..\..\..\US-Lib-OrderEngine\OrderEngine\bin\Debug\OrderEngine.dll</HintPath>
+    <Reference Include="OrderEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Sandviks Dll Library\OrderEngine\03-18-2016\OrderEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
